@@ -24,11 +24,16 @@ function holoemitter.digiline_effector(pos, _, channel, msg)
 	end
 
   if msg.command == "emit" then
-    print("emit", dump(msg))
-    local epos = vector.add(pos, {x=0, y=2, z=0})
-    local data = {
-      name = "stuff"
-    }
+    local epos = vector.add(pos, msg.pos)
+		local data = {
+			properties = msg.properties,
+			session = meta:get_int("session"),
+			emitterpos = pos,
+			id = msg.id
+		}
     minetest.add_entity(epos, "holoemitter:entity", minetest.serialize(data))
-  end
+
+	elseif msg.command == "reset" then
+		meta:set_int("session", math.random(10000))
+	end
 end

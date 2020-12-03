@@ -13,6 +13,7 @@ minetest.register_node("holoemitter:holoemitter", {
 		local meta = minetest.get_meta(pos)
 		-- default digiline channel
 		meta:set_string("channel", "holoemitter")
+    meta:set_int("session", math.random(10000))
   end,
 
   groups = {
