@@ -5,6 +5,14 @@ State: **WIP**
 
 <img src="./screenshot.png"/>
 
+## TODO
+
+* [ ] proper `holoemitter` texture
+* [ ] sanity/input checks on the digiline channel
+* [ ] more examples
+* [ ] recipe
+* [ ] license
+
 ## Adding an entity
 ```lua
 if event.type == "program" then
