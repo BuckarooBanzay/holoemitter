@@ -11,7 +11,7 @@ holoemitter.digiline_rules = {
 }
 
 function holoemitter.digiline_effector(pos, _, channel, msg)
-  local msgt = type(msg)
+	local msgt = type(msg)
 	if msgt ~= "table" then
 		return
 	end
@@ -23,15 +23,15 @@ function holoemitter.digiline_effector(pos, _, channel, msg)
 		return
 	end
 
-  if msg.command == "emit" then
-    local epos = vector.add(pos, msg.pos)
+	if msg.command == "emit" then
+		local epos = vector.add(pos, msg.pos)
 		local data = {
 			properties = msg.properties,
 			session = meta:get_int("session"),
 			emitterpos = pos,
 			id = msg.id
 		}
-    minetest.add_entity(epos, "holoemitter:entity", minetest.serialize(data))
+		minetest.add_entity(epos, "holoemitter:entity", minetest.serialize(data))
 
 	elseif msg.command == "reset" then
 		meta:set_int("session", math.random(10000))

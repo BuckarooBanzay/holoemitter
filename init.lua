@@ -1,6 +1,5 @@
 
-holoemitter = {
-}
+holoemitter = {}
 
 -- sanity checks
 assert(minetest.features.add_entity_with_staticdata, "add_entity_with_staticdata not supported")
