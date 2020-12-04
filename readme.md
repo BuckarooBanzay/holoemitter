@@ -8,6 +8,8 @@ State: **WIP**
 ## TODO
 
 * [ ] sanity/input checks on the digiline channel
+* [ ] yaw/pitch
+* [ ] limit number of entities in a session
 * [ ] recipe
 * [ ] license
 
