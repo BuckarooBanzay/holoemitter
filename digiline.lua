@@ -10,6 +10,42 @@ holoemitter.digiline_rules = {
 	{x= 0,y= 1,z= 0},{x= 0,y=-1,z= 0}, -- along y above and below
 }
 
+local allowed_properties = {
+	"visual",
+	"visual_size",
+	"mesh",
+	"textures",
+	"automatic_rotate",
+	"glow",
+	"physical",
+	"collide_with_objects",
+	"pointable",
+	"nametag"
+}
+
+local allowed_visuals = {
+	["cube"] = true,
+	["mesh"] = true,
+}
+
+local function sanitize_properties(properties)
+	if not properties then
+		return false, "properties is nil"
+	end
+
+	local newprops = {}
+	-- map allowed properties
+	for _, key in ipairs(allowed_properties) do
+		newprops[key] = properties[key]
+	end
+
+	if not allowed_visuals[newprops.visual] then
+		return false, "visual not allowed"
+	end
+
+	return true, newprops
+end
+
 function holoemitter.digiline_effector(pos, _, channel, msg)
 	local msgt = type(msg)
 	if msgt ~= "table" then
@@ -24,7 +60,35 @@ function holoemitter.digiline_effector(pos, _, channel, msg)
 	end
 
 	if msg.command == "emit" then
+
+		if not msg.pos or not msg.pos.x or not msg.pos.y or not msg.pos.z then
+			-- bad position
+			digilines.receptor_send(pos, holoemitter.digiline_rules, "holoemitter", {
+				error = true,
+				message = "invalid position"
+			})
+			return
+		end
+
 		local epos = vector.add(pos, msg.pos)
+
+		if vector.distance(pos, epos) > 32 then
+			digilines.receptor_send(pos, holoemitter.digiline_rules, "holoemitter", {
+				error = true,
+				message = "position out of range"
+			})
+		end
+
+		local ok, result = sanitize_properties(msg.properties)
+		if not ok then
+			-- sanitation failed
+			digilines.receptor_send(pos, holoemitter.digiline_rules, "holoemitter", {
+				error = true,
+				message = result
+			})
+			return
+		end
+
 		local data = {
 			properties = msg.properties,
 			session = meta:get_int("session"),

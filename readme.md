@@ -7,7 +7,6 @@ State: **WIP**
 
 ## TODO
 
-* [ ] sanity/input checks on the digiline channel
 * [ ] yaw/pitch
 * [ ] limit number of entities in a session
 * [ ] recipe
@@ -82,10 +81,21 @@ end
 
 Channel: "holoemitter"
 
+### Callback
+
 ```lua
 {
   playername = "singleplayer",
   id = "my_entity_id",
   action = "punch" -- or "rightclick"
+}
+```
+
+### Error
+
+```lua
+{
+  error = true,
+	message = "visual not allowed"
 }
 ```
