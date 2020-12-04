@@ -5,8 +5,9 @@ minetest.register_node("holoemitter:holoemitter", {
 	description = "Holoemitter",
 
 	tiles = {
-		"default_stone.png"
+		"holoemitter.png"
 	},
+	drawtype = "glasslike",
 
 	on_construct = function(pos)
 		-- inventory

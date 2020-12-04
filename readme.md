@@ -7,7 +7,6 @@ State: **WIP**
 
 ## TODO
 
-* [ ] proper `holoemitter` texture
 * [ ] sanity/input checks on the digiline channel
 * [ ] more examples
 * [ ] recipe
