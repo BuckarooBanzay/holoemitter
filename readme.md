@@ -68,6 +68,25 @@ if event.type == "program" then
 end
 ```
 
+## Display text
+
+Needs the `display_modpack`
+
+```lua
+if event.type == "program" then
+  digiline_send("holoemitter", { command = "reset" })
+  digiline_send("holoemitter", {
+    command = "emittext",
+    pos = { x=0, y=2, z=0 },
+    id = "my_entity_id",
+    text = "Test",
+		size_x = 2,
+		size_y = 1
+  })
+end
+```
+
+
 ## Resetting the emitter
 ```lua
 if event.type == "program" then
