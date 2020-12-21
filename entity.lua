@@ -2,24 +2,27 @@
 minetest.register_entity("holoemitter:entity", {
 	initial_properties = {},
 
-	on_step = function(self)
+	on_step = function(self, dtime)
 		-- sanity checks
 		if not self.data or not self.data.emitterpos then
 			self.object:remove()
 			return
 		end
 
-		local now = os.time()
-		if self.lastcheck and (now - self.lastcheck) < 2 then
-			-- don't check every time
+		if not self.dtime then
+			-- set dtime
+			self.dtime = dtime
+		else
+			-- increment
+			self.dtime = self.dtime + dtime
+		end
+
+		if self.dtime < 2 then
+			-- skip check
 			return
 		end
 
-		-- set last check time
-		self.lastcheck = now
-
-		local meta = minetest.get_meta(self.data.emitterpos)
-		if meta:get_int("session") ~= self.data.session then
+		if not holoemitter.is_active(self.data.emitterpos, self.data.session) then
 			self.object:remove()
 			return
 		end

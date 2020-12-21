@@ -1,0 +1,97 @@
+5:return {{["y"] = 0, ["x"] = 0, ["name"] = "mesecons_luacontroller:luacontroller0000", ["z"] = 1, ["meta"] = {["inventory"] = {}, ["fields"] = {["code"] = "if event.type == \"program\" then\
+  digiline_send(\"holoemitter\", {\
+    command = \"emit\",\
+    pos = { x=0, y=2, z=0 },\
+    id = \"my_entity_id\",\
+    properties = {\
+      visual = \"cube\",\
+      visual_size = {x=1,y=1},\
+      textures = {\
+        \"default_sand.png\",\
+        \"default_sand.png\",\
+        \"default_sand.png\",\
+        \"default_sand.png\",\
+        \"default_sand.png\",\
+        \"default_sand.png\"\
+      },\
+      automatic_rotate = 1,\
+      glow = 10,\
+      physical = false,\
+      collide_with_objects = false,\
+      pointable = true,\
+      nametag = \"test\"\
+    }\
+  })\
+end", ["real_portstates"] = "1", ["luac_id"] = "34508", ["formspec"] = "size[12,10]style_type[label,textarea;font=mono]background[-0.2,-0.25;12.4,10.75;jeija_luac_background.png]label[0.1,8.3;]textarea[0.2,0.2;12.2,9.5;code;;if event.type == \"program\" then\
+  digiline_send(\"holoemitter\"\\, {\
+    command = \"emit\"\\,\
+    pos = { x=0\\, y=2\\, z=0 }\\,\
+    id = \"my_entity_id\"\\,\
+    properties = {\
+      visual = \"cube\"\\,\
+      visual_size = {x=1\\,y=1}\\,\
+      textures = {\
+        \"default_sand.png\"\\,\
+        \"default_sand.png\"\\,\
+        \"default_sand.png\"\\,\
+        \"default_sand.png\"\\,\
+        \"default_sand.png\"\\,\
+        \"default_sand.png\"\
+      }\\,\
+      automatic_rotate = 1\\,\
+      glow = 10\\,\
+      physical = false\\,\
+      collide_with_objects = false\\,\
+      pointable = true\\,\
+      nametag = \"test\"\
+    }\
+  })\
+end]image_button[4.75,8.75;2.5,1;jeija_luac_runbutton.png;program;]image_button_exit[11.72,-0.25;0.425,0.4;jeija_close_window.png;exit;]", ["lc_memory"] = "return {}"}}, ["param1"] = 15}, {["y"] = 0, ["x"] = 1, ["name"] = "mesecons_luacontroller:luacontroller0000", ["z"] = 0, ["meta"] = {["inventory"] = {}, ["fields"] = {["code"] = "if event.type == \"program\" then\
+  digiline_send(\"holoemitter\", {\
+    command = \"reset\"\
+  })\
+end", ["real_portstates"] = "1", ["luac_id"] = "21997", ["formspec"] = "size[12,10]style_type[label,textarea;font=mono]background[-0.2,-0.25;12.4,10.75;jeija_luac_background.png]label[0.1,8.3;]textarea[0.2,0.2;12.2,9.5;code;;if event.type == \"program\" then\
+  digiline_send(\"holoemitter\"\\, {\
+    command = \"reset\"\
+  })\
+end]image_button[4.75,8.75;2.5,1;jeija_luac_runbutton.png;program;]image_button_exit[11.72,-0.25;0.425,0.4;jeija_close_window.png;exit;]", ["lc_memory"] = "return {}"}}, ["param1"] = 15}, {["y"] = 0, ["x"] = 1, ["name"] = "holoemitter:holoemitter", ["z"] = 1, ["meta"] = {["inventory"] = {}, ["fields"] = {["session"] = "7503", ["channel"] = "holoemitter"}}}, {["y"] = 0, ["x"] = 1, ["name"] = "mesecons_luacontroller:luacontroller0000", ["z"] = 2, ["meta"] = {["inventory"] = {}, ["fields"] = {["luac_id"] = "55572", ["code"] = "if event.type == \"digiline\" then\
+ print(event.msg)\
+end", ["lc_memory"] = "return {}", ["formspec"] = "size[12,10]style_type[label,textarea;font=mono]background[-0.2,-0.25;12.4,10.75;jeija_luac_background.png]label[0.1,8.3;]textarea[0.2,0.2;12.2,9.5;code;;if event.type == \"digiline\" then\
+ print(event.msg)\
+end]image_button[4.75,8.75;2.5,1;jeija_luac_runbutton.png;program;]image_button_exit[11.72,-0.25;0.425,0.4;jeija_close_window.png;exit;]", ["real_portstates"] = "1"}}, ["param1"] = 15}, {["y"] = 0, ["x"] = 2, ["name"] = "mesecons_luacontroller:luacontroller0000", ["z"] = 1, ["meta"] = {["inventory"] = {}, ["fields"] = {["code"] = "if event.type == \"program\" then\
+  digiline_send(\"holoemitter\", {\
+    command = \"emit\",\
+    pos = { x=-2, y=2, z=0 },\
+    id = \"my_entity_id\",\
+    properties = {\
+      visual = \"mesh\",\
+      mesh = \"character.b3d\",\
+      visual_size = {x=1,y=1},\
+      textures = {\"default_sand.png\"},\
+      automatic_rotate = 1,\
+      glow = 10,\
+      physical = false,\
+      collide_with_objects = false,\
+      pointable = true,\
+      nametag = \"test\"\
+    }\
+  })\
+end", ["real_portstates"] = "1", ["luac_id"] = "402", ["formspec"] = "size[12,10]style_type[label,textarea;font=mono]background[-0.2,-0.25;12.4,10.75;jeija_luac_background.png]label[0.1,8.3;]textarea[0.2,0.2;12.2,9.5;code;;if event.type == \"program\" then\
+  digiline_send(\"holoemitter\"\\, {\
+    command = \"emit\"\\,\
+    pos = { x=-2\\, y=2\\, z=0 }\\,\
+    id = \"my_entity_id\"\\,\
+    properties = {\
+      visual = \"mesh\"\\,\
+      mesh = \"character.b3d\"\\,\
+      visual_size = {x=1\\,y=1}\\,\
+      textures = {\"default_sand.png\"}\\,\
+      automatic_rotate = 1\\,\
+      glow = 10\\,\
+      physical = false\\,\
+      collide_with_objects = false\\,\
+      pointable = true\\,\
+      nametag = \"test\"\
+    }\
+  })\
+end]image_button[4.75,8.75;2.5,1;jeija_luac_runbutton.png;program;]image_button_exit[11.72,-0.25;0.425,0.4;jeija_close_window.png;exit;]", ["lc_memory"] = "return {}"}}, ["param1"] = 15}}
