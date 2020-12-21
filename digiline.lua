@@ -121,7 +121,15 @@ function holoemitter.digiline_effector(pos, _, channel, msg)
 			emitterpos = pos,
 			id = msg.id
 		}
-		minetest.add_entity(epos, "holoemitter:entity", minetest.serialize(data))
+		local entity = minetest.add_entity(epos, "holoemitter:entity", minetest.serialize(data))
+
+		if msg.rotation then
+			entity:set_rotation({
+				x = tonumber(msg.rotation.x) or 0,
+				y = tonumber(msg.rotation.y) or 0,
+				z = tonumber(msg.rotation.z) or 0
+			})
+		end
 
 	elseif msg.command == "emit" then
 		-- emit custom entity

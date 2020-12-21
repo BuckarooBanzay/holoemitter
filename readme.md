@@ -4,10 +4,10 @@
 State: **WIP**
 
 <img src="./screenshot.png"/>
+<img src="./screenshot_text.png"/>
 
 ## TODO
 
-* [ ] yaw/pitch
 * [ ] limit number of entities in a session
 * [ ] recipe
 * [ ] license
@@ -81,7 +81,8 @@ if event.type == "program" then
     id = "my_entity_id",
     text = "Test",
 		size_x = 2,
-		size_y = 1
+		size_y = 1,
+		rotation = { x=0, y=0, z=0 }
   })
 end
 ```
