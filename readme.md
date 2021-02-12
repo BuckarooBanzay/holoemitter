@@ -12,7 +12,6 @@ State: **WIP**
 
 * [ ] limit number of entities in a session
 * [ ] recipe
-* [ ] license
 
 ## Adding an entity
 
@@ -121,3 +120,7 @@ Channel: "holoemitter"
 	message = "visual not allowed"
 }
 ```
+
+# License
+
+MIT
