@@ -1,6 +1,8 @@
 
 # Minetest holoemitter mod
 
+[![ContentDB](https://content.minetest.net/packages/BuckarooBanzay/holoemitter/shields/title/)](https://content.minetest.net/packages/BuckarooBanzay/holoemitter/)
+
 State: **WIP**
 
 <img src="./screenshot.png"/>
